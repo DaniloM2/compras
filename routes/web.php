@@ -21,4 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::resource('feiras', \App\Http\Controllers\FeiraController::class);
+Route::resource('locals', \App\Http\Controllers\LocalController::class);
+
 require __DIR__.'/auth.php';
