@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Feira;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class FeiraSeeder extends Seeder
@@ -11,8 +13,12 @@ class FeiraSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //
+  public function run(){
+    $users = User::All();
+      foreach ($users as $user) {
+        Feira::factory(2)->create([
+          'user_id' => $user->id
+      ]);
     }
+  }	
 }
