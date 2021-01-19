@@ -15,8 +15,9 @@ class CreateFeirasTable extends Migration
     {
         Schema::create('feiras', function (Blueprint $table) {
             $table->id();
-            $table->float('valor',8,2);
-            $table->dateTime('dia', $precision =0);
+            $table->float('valor');
+            $table->dateTime('dia');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
