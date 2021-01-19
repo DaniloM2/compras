@@ -22,7 +22,8 @@ class FeiraFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'valor' => $this->faker->randomDigit,
+            'dia' => $this->faker->dateTime
         ];
     }
 }
