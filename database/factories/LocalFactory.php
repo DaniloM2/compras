@@ -22,7 +22,9 @@ class LocalFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nome' => $this->faker->word,
+            'descricao' => $this->faker->word,
+            'promocao' => $this->faker->word,
         ];
     }
 }

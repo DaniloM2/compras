@@ -18,6 +18,7 @@ class CreateLocalsTable extends Migration
             $table->string('nome');
             $table->string('descricao');
             $table->string('promocao');
+            $table->integer('feira_id');
             $table->timestamps();
         });
     }
