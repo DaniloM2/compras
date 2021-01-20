@@ -10,6 +10,10 @@ class Feira extends Model
     use HasFactory;
 
     public function user(){
-    	return $this->belongsTo(Local::class);
+    	return $this->belongsTo(User::class);
+    }
+
+    public function locals(){
+    	return $this->hasMany(Local::class);
     }
 }
