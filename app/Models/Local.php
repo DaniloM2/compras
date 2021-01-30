@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Local extends Model
 {
     use HasFactory;
+
+    public function feirasRe(){
+    	return $this->belongsTo(Feira::class);
+    }
 }
