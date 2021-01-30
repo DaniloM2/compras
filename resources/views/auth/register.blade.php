@@ -26,6 +26,20 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
 
+            <!-- Endereço -->
+            <div class="mt-4">
+                <x-label for="endereco" :value="__('Endereço')" />
+
+                <x-input id="endereco" class="block mt-1 w-full" type="text" name="endereco" :value="old('endereco')" required />
+            </div>
+
+            <!-- Descrição -->
+            <div class="mt-4">
+                <x-label for="descricao" :value="__('Descrição')" />
+
+                <x-input id="descricao" class="block mt-1 w-full" type="text" name="descricao" :value="old('descricao')" />
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
