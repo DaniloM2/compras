@@ -9,6 +9,12 @@ class Feira extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'dia',
+        'valor',
+        'user_id',
+    ];
+
     public function user(){
     	return $this->belongsTo(User::class);
     }

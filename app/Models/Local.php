@@ -9,7 +9,7 @@ class Local extends Model
 {
     use HasFactory;
 
-    public function feirasRe(){
+    public function feira(){
     	return $this->belongsTo(Feira::class);
     }
 }
