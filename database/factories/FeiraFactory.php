@@ -23,7 +23,7 @@ class FeiraFactory extends Factory
     {
         return [
             'valor' => $this->faker->randomDigit,
-            'dia' => $this->faker->dateTime
+            'dia' => $this->faker->date
         ];
     }
 }
