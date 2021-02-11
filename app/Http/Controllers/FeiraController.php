@@ -4,29 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Feira;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FeiraController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +16,13 @@ class FeiraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Feira::create([
+            'dia' => $request->dia,
+            'valor' => $request->valor,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        return redirect('dashboard');
     }
 
     /**

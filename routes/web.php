@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\FeiraController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
-Route::resource('feiras', \App\Http\Controllers\FeiraController::class);
-Route::resource('locals', \App\Http\Controllers\LocalController::class);
+Route::post('/feira/nova', [FeiraController::class, 'store'])->name('add-feira');
 
 require __DIR__.'/auth.php';
