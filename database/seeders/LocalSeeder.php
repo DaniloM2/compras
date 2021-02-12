@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Feira;
 use App\Models\Local;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class LocalSeeder extends Seeder
@@ -14,11 +15,15 @@ class LocalSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        foreach (Feira::all() as $feira) {
-        	Local::factory(2)->create([
-        		'feira_id' => $feira->id
-        	]);
+    {    
+    $users = User::All();
+        foreach ($users as $user) {
+            foreach (Feira::where('user_id', $user->id)->get() as $feira) {
+                Local::factory(1)->create([
+                    'user_id' => $user->id,
+                    'feira_id' => $feira->id,
+                ]);
+            }
         }
     }
 }
