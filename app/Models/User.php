@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function feiras(){
         return $this->hasMany(Feira::class);     
     } 
+
+    public function locals(){
+        return $this->hasMany(Local::class);     
+    } 
 }
