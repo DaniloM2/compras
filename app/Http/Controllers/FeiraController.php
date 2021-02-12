@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Feira;
+use App\Models\Local;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -67,6 +68,8 @@ class FeiraController extends Controller
      */
     public function destroy(Feira $feira)
     {
-        //
+        $feira->delete();
+        
+        return redirect('dashboard');
     }
 }

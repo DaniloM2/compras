@@ -3,30 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Local;
+use App\Models\Feira;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LocalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +17,17 @@ class LocalController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach (Feira::all() as $feiras) {
+        $feira_id = $feiras->id;
+}
+        Local::create([
+            'nome' => $request->nome,
+            'descricao' => $request->descricao,
+            'promocao' => $request->promocao,
+            'feira_id' => $feira_id,
+            'user_id' => Auth::user()->id,
+        ]);
+        return redirect('dashboard');
     }
 
     /**
@@ -80,6 +72,8 @@ class LocalController extends Controller
      */
     public function destroy(Local $local)
     {
-        //
+        $local->delete();
+        
+        return redirect('dashboard');
     }
 }
