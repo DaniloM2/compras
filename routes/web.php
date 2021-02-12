@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FeiraController;
+use App\Http\Controllers\LocalController;
+use App\Models\Feira;
+use App\Models\Local;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,5 +24,13 @@ Route::get('/', function () {
 Route::get('/dashboard', [HomeController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
 
 Route::post('/feira/nova', [FeiraController::class, 'store'])->name('add-feira');
+
+Route::post('/local/novo', [LocalController::class, 'store'])->name('add-local');
+
+Route::model('feira', Feira::class);
+Route::get('/compras/remover/{feira}', [FeiraController::class, 'destroy'])->name('rm-feira');
+
+Route::model('local', Local::class);
+Route::get('/locais/remover/{local}', [LocalController::class, 'destroy'])->name('rm-local');
 
 require __DIR__.'/auth.php';
