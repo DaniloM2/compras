@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class FeiraController extends Controller
 {
+    public function list (){
+        return auth()->user()->feiras;
+    }
+
     /**
      * Store a newly created resource in storage.
      *

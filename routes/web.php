@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FeiraController;
 use App\Http\Controllers\LocalController;
+use App\Http\Controllers\SPAController;
 use App\Models\Feira;
 use App\Models\Local;
 /*
