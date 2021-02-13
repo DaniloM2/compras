@@ -28,9 +28,15 @@ Route::post('/feira/nova', [FeiraController::class, 'store'])->name('add-feira')
 Route::post('/local/novo', [LocalController::class, 'store'])->name('add-local');
 
 Route::model('feira', Feira::class);
-Route::get('/compras/remover/{feira}', [FeiraController::class, 'destroy'])->name('rm-feira');
+Route::get('/compras/remover/{feira}', [FeiraController::class, 'destroy'])
+->name('rm-feira')
+->middleware('auth');
 
 Route::model('local', Local::class);
-Route::get('/locais/remover/{local}', [LocalController::class, 'destroy'])->name('rm-local');
+Route::get('/locais/remover/{local}', [LocalController::class, 'destroy'])
+->name('rm-local')
+->middleware('auth');
+
+Route::get('/spa', [SPAController::class, 'home']);
 
 require __DIR__.'/auth.php';
