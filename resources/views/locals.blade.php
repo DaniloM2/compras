@@ -3,14 +3,13 @@
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <div class="p-6 bg-white border-b border-gray-200">
         <div class="grid grid-cols-4">
-            
         @foreach(Auth::user()->locals as $local)
                 <div class="p-3 m-1 rounded-lg border">
                         Nome do local: {{ $local->nome }} <br> 
                         Descrição: {{ $local->descricao }} <br>
                         Promoção: {{ $local->promocao }}
-                    <div class="grid grid-cols-2 text-center" x-data='{modal:false}'>
-                       <a class="bg-blue-200 rounded-bl-lg hover:bg-blue-300" href="">Editar</a>
+                    <div class="grid grid-cols-2 text-center">
+                       <a class="bg-blue-200 rounded-bl-lg hover:bg-blue-300" href="#">Editar</a>
                         <a class="bg-red-200 rounded-br-lg hover:bg-red-300" href="{{ route('rm-local', $local->id)}}">Excluir</a>
                             </div>
                         </div>

@@ -7,13 +7,10 @@
                 <div class="p-3 m-1 rounded-lg border">
                     Feira realizada no dia: {{ $feira->dia }} <br> 
                     no valor de: {{ $feira->valor }} R$ <br>
-                    <div class="grid grid-cols-2 text-center" x-data='{modal:false}'>
-                        <a class="bg-blue-200 rounded-bl-lg hover:bg-blue-300" href="#" @click.prevent='modal=!modal'>Editar</a>
-                        <a class="bg-red-200 rounded-br-lg hover:bg-red-300" href="#" @click.prevent='modal=!modal'>Excluir</a>
-                    <div x-show='modal'>
-                        @include('delete')
-                    </div>
-                    </div>
+                    <div class="grid grid-cols-2 text-center">
+                       <a class="bg-blue-200 rounded-bl-lg hover:bg-blue-300" href="#">Editar</a>
+                        <a class="bg-red-200 rounded-br-lg hover:bg-red-300" href="{{ route('rm-feira', $feira->id)}}">Excluir</a>
+                            </div>
                         </div>
                     @endforeach
                     </div>
