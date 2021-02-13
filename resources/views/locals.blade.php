@@ -53,17 +53,17 @@
             <h1 class="text-center p-3">Adcionar Local</h1>
             <form action="{{ route('add-local') }}" method="POST">
                 @csrf
-               <div>
+               <div class="m-3">
                     <x-label for="nome" :value="__('Nome')" />
 
                     <x-input id="nome" class="block mt-1 w-full" type="text" name="nome" :value="old('nome')" required />
                 </div>
-                <div>
+                <div class="m-3">
                     <x-label for="descricao" :value="__('Descrição')" />
 
                     <x-input id="descricao" class="block mt-1 w-full" type="text" name="descricao" :value="old('descricao')" />
                 </div>
-                <div>
+                <div class="m-3">
                     <x-label for="promocao" :value="__('Promoção')" />
 
                     <x-input id="promocao" class="block mt-1 w-full" type="text" name="promocao" :value="old('promocao')" />

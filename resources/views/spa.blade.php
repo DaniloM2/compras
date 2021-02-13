@@ -8,6 +8,9 @@
 						<div>
 							<span x-text="user.name"/>
 						</div>
+						<div>
+							<a href="http://localhost:8000/spa">Sair</a>
+						</div>
 					</template>
 					<template x-if="!is_logged">
 						<div x-data="loginForm('{{ action([\App\Http\Controllers\APIAuthController::class, 'login']) }}')">
@@ -22,7 +25,8 @@
 				<main>
 					<template x-for="feira in feiras" :key="feira">
 						<div>
-							<span x-text="feira.dia"></span> (<span x-text="feira.valor"></span>)
+							<span x-text="feira.dia"></span>
+							(<span x-text="feira.valor"></span>)
 						</div>
 					</template>
 				</main>

@@ -52,15 +52,15 @@
             <h1 class="text-center p-3">Adcionar Feira</h1>
             <form action="{{ route('add-feira') }}" method="POST">
                 @csrf
-               <div>
+               <div class="m-3">
                     <x-label for="dia" :value="__('Dia')" />
 
-                    <x-input id="dia" class="block mt-1 w-full" type="text" name="dia" :value="old('dia')" required />
+                    <x-input id="dia" class="block mt-1 w-full" type="text" name="dia" :value="old('dia')" placeholder="Ex: 2021-02-12" required />
                 </div>
-                <div>
+                <div class="m-3">
                     <x-label for="valor" :value="__('Valor')" />
 
-                    <x-input id="valor" class="block mt-1 w-full" type="number" name="valor" :value="old('valor')" required />
+                    <x-input id="valor" class="block mt-1 w-full" type="number" step="0.01" name="valor" :value="old('valor')" placeholder="Ex: 499.99" required />
                 </div>
                 <div class="flex items-center justify-end mt-4">
                     
